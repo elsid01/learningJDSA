@@ -42,3 +42,10 @@ Array.prototype.removeFirstPosition = function(){
   }
   return this.reIndex(this);
 }
+
+// Joining multiple arrays
+const zero = 0;
+const positieNumbers = [1, 2, 3];
+const negativeNumbers = [-3, -2, -3];
+
+let numbers = negativeNumbers.concat(zero, positieNumbers);
