@@ -49,3 +49,44 @@ const positieNumbers = [1, 2, 3];
 const negativeNumbers = [-3, -2, -3];
 
 let numbers = negativeNumbers.concat(zero, positieNumbers);
+
+
+// Sorting elements
+const numbers1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+numbers.reverse();
+
+numbers.sort((a, b) => a - b);
+
+const compare = function(a, b){
+  if(a < b) return -1;
+  if(a > b) return 1;
+  return 0;
+}
+
+numbers.sort(compare);
+
+// Custom sorting
+const friends = [
+  {name: 'John', age: 30},
+  {name: 'Ana', age: 20},
+  {name: 'Chris', age: 24},
+];
+
+function comparePerson(a, b){
+  if(a.age < b.age) return -1;
+  if(a.age > b.age) return 1;
+  return 0;
+}
+
+console.log(friends.sort(comparePerson));
+
+
+// Sorting string 
+let names = ['Ana', 'John', 'ana', 'john'];
+
+console.log(names.sort(function(a,b){
+  if(a.toLowerCase < b.toLowerCase) return -1;
+  if(a.toLowerCase > b.toLowerCase) return 1;
+  return 0;
+}))
