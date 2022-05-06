@@ -90,3 +90,12 @@ console.log(names.sort(function(a,b){
   if(a.toLowerCase > b.toLowerCase) return 1;
   return 0;
 }))
+
+
+// The find and findIndex methods
+function multipleOf13(element, index, array){
+  return (element % 13 == 0);
+}
+
+console.log(numbers.find(multipleOf13));
+console.log(numbers.find(multipleOf13));
