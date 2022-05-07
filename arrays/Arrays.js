@@ -45,7 +45,7 @@ Array.prototype.removeFirstPosition = function(){
 
 // Joining multiple arrays
 const zero = 0;
-const positieNumbers = [1, 2, 3];
+const positiveNumbers = [1, 2, 3];
 const negativeNumbers = [-3, -2, -3];
 
 let numbers = negativeNumbers.concat(zero, positieNumbers);
