@@ -12,7 +12,7 @@ class Queue{
   }
 
   dequeue(){
-    if(this.items.isEmpty()){
+    if(this.isEmpty()){
       return undefined;
     }
 
@@ -27,7 +27,7 @@ class Queue{
   }
 
   peek(){
-    if(this.items.isEmpty()){
+    if(this.isEmpty()){
       return undefined;
     }
     return this.items[this.lowestCount];
@@ -45,7 +45,7 @@ class Queue{
 
   toString(){
    
-    if(this.items.isEmpty()){
+    if(this.isEmpty()){
      return '';
     }
     let objString = `${this.items[this.lowestCount]}`;
@@ -55,3 +55,20 @@ class Queue{
     return objString;
   }
 }
+
+const queue = new Queue();
+console.log(queue.isEmpty());
+queue.enqueue('John');
+queue.enqueue('Jack');
+console.log(queue.toString());
+
+queue.enqueue('Camila');
+
+console.log(queue.toString());
+console.log(queue.size());
+console.log(queue.isEmpty());
+queue.dequeue();
+queue.dequeue();
+console.log(queue.toString());
+
+

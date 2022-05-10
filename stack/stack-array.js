@@ -75,6 +75,12 @@ class Stack {
   }
 
 }
+const stack = new Stack();
+console.log(stack.toString());
+
+stack.push('Ely');
+stack.push('Khadija');
+console.log(stack.toString());
 
 function decimalToBinary(decNumber){
   const remStack = new Stack();
@@ -96,6 +102,8 @@ function decimalToBinary(decNumber){
   return binaryString;
 }
 
+console.log(decimalToBinary(233));
+
 function baseConverter(decNumber, base){
   const remStack = new Stack();
   const digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -116,5 +124,5 @@ function baseConverter(decNumber, base){
 }
 return baseString;
 }
-console.log(baseConverter(100345, 16));
+
 
