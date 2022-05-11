@@ -4,8 +4,7 @@
 
 **********************/
 
-
-class Deque{
+ class Dequeue{
 
   constructor(){
     this.items = {};
@@ -13,7 +12,7 @@ class Deque{
     this.lowestCount = 0;
   }
   
-  /******************** 
+/******************** 
  
  Creating the Deque 
  Main functions
@@ -107,3 +106,62 @@ peekBack(){
     return objString;
   }
 }
+
+
+/******************** 
+ Using the Dequeue class
+**********************/
+
+const dequeue = new Dequeue();
+console.log(dequeue.isEmpty());
+
+function hotPotato(elementsList, num){
+ const queue = new Queue();
+ const eliminatedList = [];
+
+ for(let i = 0; i < elementsList.length; i++){
+   queue.enqueue(queue.dequeue());
+ }
+
+ while(queue.size() > 1){
+   for(let i = 0; i < num; i++){
+     queue.enqueue(queue.dequeue());
+   }
+   eliminatedList.push(queue.dequeue());
+ }
+ return {
+   eliminated : eliminatedList,
+   winner: queue.dequeue()
+ }
+}
+
+const names = ['John', 'Jack', 'Camila', 'Ingrid', 'Carl'];
+const result = hotPotato(names, 7);
+
+result.eliminated.forEach(name => {
+  console.log(`${name} was eliminated from the Hot Potato game.`)})
+
+
+  function palindromeChecker(aString){
+    if(aString === undefined || aString === null ||
+       (aString != null && aString.length === 0)){
+         return false;
+       }
+    const deque = new Dequeue();
+    const lowerString = aString.toLowerCase().split('').join('');
+    let isEqual = true;
+    let firstChar, lastChar;
+
+    for(let i = 0; i < lowerString.length; i++){
+      deque.addBack(lowerString.charAt(i));
+    }
+
+    while(deque.size() > 1 && isEqual){
+      firstChar = deque.removeFront();
+      lastChar = deque.removeBack();
+      if(firstChar !== lastChar){
+        isEqual = false;
+      }
+    }
+    return isEqual;
+  }
